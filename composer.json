@@ -1,0 +1,14 @@
+{
+    "name": "slavl/weather-app",
+    "description": "Weather app",
+    "type": "project",
+    "require": {
+        "twig/twig": "^3.3"
+    },
+    "authors": [
+        {
+            "name": "Yaroslav Pidlisny",
+            "email": "slavles04@gmail.com"
+        }
+    ]
+}
