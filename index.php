@@ -17,6 +17,8 @@ $arr3 = get_temperature("https://meteo.ua/49/hmelnitskiy", '.wwt_min', '.wwt_max
 
 $avg_temperature = get_average_temperature($arr1, $arr2, $arr3);
 $days_info = get_days_info("https://sinoptik.ua/%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0-%D1%85%D0%BC%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D0%BA%D0%B8%D0%B9");
+$images = get_weaher_img("https://sinoptik.ua/%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0-%D1%85%D0%BC%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D0%BA%D0%B8%D0%B9");
 
 $template = $twig->load('main.twig');
-echo $template->render(['avgTmp' => $avg_temperature, 'days_info' => $days_info]);
+echo $template->render(['avgTmp' => $avg_temperature, 'days_info' => $days_info, 'imgs' => $images]);
+//

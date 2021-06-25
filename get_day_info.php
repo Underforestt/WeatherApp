@@ -11,6 +11,7 @@ function get_text($selector, $url)
     foreach ($html->find($selector) as $item)
     {
         $arr[] = $item->text();
+        $arr[] = $item->text();
     }
 
     return $arr;
@@ -28,5 +29,19 @@ function get_days_info($url)
     return $info;
 }
 
+function get_weaher_img($url)
+{
+    $html = file_get_html($url);
+
+    $images = [];
+    foreach ($html->find('.main .weatherIco img.weatherImg') as $img)
+    {
+        $images[] = 'https:'.$img->src;
+    }
+
+    return $images;
+}
+
 //get_days_info("https://sinoptik.ua/%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0-%D1%85%D0%BC%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D0%BA%D0%B8%D0%B9");
+//get_weaher_img("https://sinoptik.ua/%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0-%D1%85%D0%BC%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D0%BA%D0%B8%D0%B9");
 
