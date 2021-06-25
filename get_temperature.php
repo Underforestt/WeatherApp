@@ -1,6 +1,6 @@
 <?php
 
-include("simple_html_dom.php");
+include_once("simple_html_dom.php");
 
 function get_temperature($url, $min_separator, $max_separator)
 {
