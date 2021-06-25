@@ -14,10 +14,9 @@ function get_temperature($url, $min_separator, $max_separator)
         $min_tmp_n[$i] = preg_replace('/\D/', '', $min_tmp[$i]);
         $max_tmp_n[$i] = preg_replace('/\D/', '', $max_tmp[$i]);
     }
-    $temperature[0] = $min_tmp_n;
-    $temperature[1] = $max_tmp_n;
+    $temperature['min'] = $min_tmp_n;
+    $temperature['max'] = $max_tmp_n;
 
-    print_r($temperature);
     return $temperature;
 
 }
