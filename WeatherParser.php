@@ -72,7 +72,6 @@ class WeatherParser
         $info['day'] = $this->get_text('.day-link', $this->sinoptic_url);
         $info['date'] = $this->get_text('.date', $this->sinoptic_url);
         $info['month'] = $this->get_text('.month', $this->sinoptic_url);
-        $info['month'] = $this->get_text('.month', $this->sinoptic_url);
 
         return $info;
     }

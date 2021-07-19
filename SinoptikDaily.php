@@ -50,16 +50,17 @@ class SinoptikDaily
         return $wind;
     }
 
-    static public function get_weather($sinoptik_daily_url){
-         $html = file_get_html($sinoptik_daily_url);
-         $weather['temperature'] = SinoptikDaily::get_temperature($html);
-         $weather['humidity'] = SinoptikDaily::get_humidity($html);
-         $weather['wind'] = SinoptikDaily::get_wind($html);
+    static public function get_weather($sinoptik_daily_html){
+         $weather['temperature'] = SinoptikDaily::get_temperature($sinoptik_daily_html);
+         $weather['humidity'] = SinoptikDaily::get_humidity($sinoptik_daily_html);
+         $weather['wind'] = SinoptikDaily::get_wind($sinoptik_daily_html);
 
          print_r($weather);
+         return $weather;
     }
 
 }
 
-SinoptikDaily::get_weather("https://sinoptik.ua/%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0-%D1%85%D0%BC%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D0%BA%D0%B8%D0%B9/2021-07-07");
+$html = file_get_html("https://sinoptik.ua/%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0-%D1%85%D0%BC%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D0%BA%D0%B8%D0%B9/2021-07-07");
+SinoptikDaily::get_weather($html);
 
