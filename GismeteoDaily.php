@@ -53,7 +53,6 @@ class GismeteoDaily
         $weather['humidity'] = GismeteoDaily::get_humidity($gismeteo_daily_html);
         $weather['wind'] = GismeteoDaily::get_wind($gismeteo_daily_html);
 
-        print_r($weather);
         return $weather;
     }
 }
